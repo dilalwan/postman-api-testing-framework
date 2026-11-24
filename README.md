@@ -62,6 +62,10 @@ Initial collection execution results:
 | Average response time | 341 ms |
 | Execution duration | 12.069 seconds |
 
+
+<img width="532" height="443" alt="image" src="https://github.com/user-attachments/assets/dbffc320-5a0f-4871-90d1-3ff1e5ad0d97" />
+
+
 ## 7. Repository Structure
 
 - `collections/` – Exported Postman collection
