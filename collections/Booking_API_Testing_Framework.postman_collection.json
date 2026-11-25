@@ -18,7 +18,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Response is JSON\", function () {\r\n    pm.response.to.be.json;\r\n});\r\n\r\npm.test(\"Response body is an array\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response).to.be.an(\"array\");\r\n});\r\n\r\npm.test(\"Every booking has an ID\", function () {\r\n    const response = pm.response.json();\r\n\r\n    response.forEach(function (booking) {\r\n        pm.expect(booking).to.have.property(\"bookingid\");\r\n    });\r\n});"
+                  "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Response is JSON\", function () {\r\n    pm.response.to.be.json;\r\n});\r\n\r\npm.test(\"Response body is an array\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response).to.be.an(\"array\");\r\n});\r\n\r\npm.test(\"Every booking has an ID\", function () {\r\n    const response = pm.response.json();\r\n\r\n    response.forEach(function (booking) {\r\n        pm.expect(booking).to.have.property(\"bookingid\");\r\n    });\r\n});\r\n\r\n\r\nconst jsonData = pm.response.json();\r\n\r\npm.test(\"Booking IDs are available\", function () {\r\n    pm.expect(jsonData).to.be.an(\"array\");\r\n    pm.expect(jsonData.length).to.be.greaterThan(0);\r\n});\r\n\r\nif (jsonData.length > 0) {\r\n    pm.collectionVariables.set(\"bookingId\", jsonData[0].bookingid.toString());\r\n    console.log(\"Dynamic booking ID saved:\", jsonData[0].bookingid);\r\n}\r\n"
                 ]
               }
             }
@@ -58,7 +58,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://restful-booker.herokuapp.com/booking/1",
+              "raw": "https://restful-booker.herokuapp.com/booking/{{bookingId}}",
               "protocol": "https",
               "host": [
                 "restful-booker",
@@ -67,7 +67,7 @@
               ],
               "path": [
                 "booking",
-                "1"
+                "{{bookingId}}"
               ]
             }
           },
