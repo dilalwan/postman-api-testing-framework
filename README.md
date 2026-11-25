@@ -71,7 +71,7 @@ Initial collection execution results:
 - `collections/` – Exported Postman collection
 - `reports/` – API test execution report
 - `screenshots/` – API request and response evidence
-- `test-cases/` – Test scenarios and test cases
+- `test cases/` – Test scenarios and test cases
 
 ## 8. How to Execute
 
