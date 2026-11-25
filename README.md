@@ -1,3 +1,5 @@
+![Postman API Tests](https://github.com/dilalwan/postman-api-testing-framework/actions/workflows/postman-api-tests.yml/badge.svg)
+
 # postman-api-testing-framework
 REST API testing framework using Postman, JavaScript assertions, CRUD operations, authentication and automated test execution.
 
@@ -87,6 +89,42 @@ Initial collection execution results:
 
 [Restful Booker API Documentation](https://restful-booker.herokuapp.com/apidoc/index.html)
 
-## 10. Disclaimer
+## 10. CI/CD Integration – GitHub Actions
+
+This project is integrated with GitHub Actions to automatically execute the Postman API testing collection.
+
+### Workflow Triggers
+
+The workflow is configured to run automatically on:
+
+- Push to the `main` branch
+- Pull requests targeting the `main` branch
+- Manual execution through GitHub Actions (`workflow_dispatch`)
+
+### CI Execution Process
+
+1. GitHub Actions checks out the repository.
+2. Postman CLI is installed and configured.
+3. The Postman collection is executed.
+4. API requests are sent to the Restful Booker public API.
+5. JavaScript assertions validate API responses.
+6. GitHub Actions reports the execution status as Success or Failure.
+
+### CI Workflow
+
+`GitHub Push / Pull Request` → `GitHub Actions` → `Checkout Repository` → `Postman CLI` → `Execute Collection` → `Assertions` → `CI Result`
+
+### Workflow File
+
+The CI/CD configuration is maintained at:
+
+`.github/workflows/postman-api-tests.yml`
+
+### CI Execution Result
+
+The collection has been successfully executed through GitHub Actions, validating the integration of the Postman API testing collection with the CI pipeline.
+
+This demonstrates automated API test execution as part of a CI workflow.
+## 11. Disclaimer
 
 This is an independent learning and portfolio project using a publicly available demonstration API. It is not associated with Vodafone Idea or any production customer billing system.
